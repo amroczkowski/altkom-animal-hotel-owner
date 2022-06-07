@@ -1,0 +1,22 @@
+server:
+  port: 8200
+spring:
+  application:
+    name: owner-service
+
+logging:
+  level:
+    pl.altkom.animalhotel.ownerservice.client: DEBUG
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
