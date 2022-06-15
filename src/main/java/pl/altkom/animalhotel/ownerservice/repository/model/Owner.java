@@ -2,8 +2,8 @@ package pl.altkom.animalhotel.ownerservice.repository.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,8 @@ import lombok.Setter;
 public class Owner {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "ownerSeq")
+    @SequenceGenerator(name = "ownerSeq", sequenceName = "owner_seq", allocationSize = 20)
     private Long id;
 
     private String firstName;
